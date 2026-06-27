@@ -110,7 +110,7 @@
     }
 
     .hero-logo {
-      width: min(520px, 85vw);
+      width: min(680px, 85vw);
       height: auto;
       margin-bottom: 0.5rem;
     }
@@ -228,9 +228,13 @@
     /* ── INSTRUMENTOS ── */
     .instruments-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
       margin-top: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .instruments-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     .instrument-card {
@@ -542,14 +546,22 @@
 
       section { padding: 4rem 1.4rem; }
 
-      .sobre-layout,
-      .contato-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sobre-layout { grid-template-columns: 1fr; gap: 2rem; }
 
-      .sobre-visual { display: none; }
+      .sobre-visual { display: block; }
+
+      .sobre-photo-placeholder,
+      .sobre-visual img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 4px;
+      }
+
+      .sobre-accent { display: none; }
 
       .sobre-stats { justify-content: center; }
-
-      .instruments-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
